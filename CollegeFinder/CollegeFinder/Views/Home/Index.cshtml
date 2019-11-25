@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<CollegeFinder.Models.College>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+@*<form asp-controller="Home" asp-action="Index" method="post" runat="server">*@
+@using (Html.BeginForm("collegepage", "Home"))
+{
+    foreach (var item in Model)
+    {
+    <ul id="myUL">
+        <li name="collegeName">
+            <a asp-controller="Home" asp-action="collegepage" asp-route-id="@item.collegeName">@item.collegeName</a>
+        </li>
+    </ul>
+    }
+}
+

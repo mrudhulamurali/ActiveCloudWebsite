@@ -1,0 +1,16 @@
+﻿using CollegeFinder.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CollegeFinder.DataAccess
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options) { }
+
+        public DbSet<College> Colleges { get; set; }
+    }
+}

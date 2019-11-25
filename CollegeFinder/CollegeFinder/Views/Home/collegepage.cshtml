@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "collegepage";
+}
+@model  CollegeFinder.Models.Result
+
+        <table class="GeneratedTable">
+            <thead>
+                <tr>
+                    <th>Your College Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>College Name  : @Model.school.name </td>
+                </tr>
+                <tr>
+                    <td>State  :  @Model.school.state</td>
+                </tr>
+                <tr>
+                    <td>City  :  @Model.school.city</td>
+                </tr>
+                <tr>
+                    <td>Admission Rate  :  @Model.latest.admissions.admission_rate.overall </td>
+                </tr>
+                <tr>
+                    <td>Average SAT  :  @Model.latest.admissions.sat_scores.average.overall </td>
+                </tr>
+                <tr>
+                    <td>Accredition  : @Model.school.accreditor</td>
+                </tr>
+                <tr>
+                    <td>Institute URL : <a id="htt" href=@Model.school.school_url>@Model.school.school_url</a></td>
+                </tr>
+            </tbody>
+        </table>
+

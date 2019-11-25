@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "popularpage"; }
+
+@model IEnumerable<CollegeFinder.Models.Result>
+@*@model1  CollegeFinder.Models.*@
+
+@*<h1>Popular Colleges</h1>*@<br /><br />
+<h2>Popular Colleges</h2>
+<table class="PopularTable">
+    <thead>
+        <tr color="grey">
+            <th>College Name</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Admission Rate</th>
+        </tr>
+    </thead>
+    @foreach (var result in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@result.school.name </td>
+                <td>@result.school.state</td>
+                <td>@result.school.city</td>
+                <td>@result.latest.admissions.admission_rate.overall </td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+
+

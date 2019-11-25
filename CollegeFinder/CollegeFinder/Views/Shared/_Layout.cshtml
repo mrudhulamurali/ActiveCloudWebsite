@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <h2 id="college">College Finder</h2>
+    <!--This is a comment. Comments are not displayed in the browser-->
+
+    <a id="footnote" asp-controller="Home" asp-action="popularpage">Home</a>
+    <a id="footnote" asp-controller="Home" asp-action="Index">Search</a>
+    <a id="footnote" asp-controller="Home" asp-action="Chart">Chart</a>
+    <a id="footnote" asp-controller="Home" asp-action="About_Us">About Us</a>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <p>College Finder is a website intended to help students find their dream college.</p>
+        <p>All Rights Reserved by CollegeFinder.com</p>
+        <br />
+
+    </footer>
+    <script src="~/js/main.js"></script>
+</body>
+</html>
