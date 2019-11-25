@@ -1,28 +1,30 @@
-﻿<div class="chart"></div>
+﻿@{
+    ViewData["Title"] = "chart";
+}
+<br /><br />
+<h2>College Chart</h2>
+<br />
+    <div id="chartContainer" style="height: 100%; width: 50%;"></div>
 
-<ul class="key">
-    <li>
-        <strong class="percent red">4%</strong>
-        <span class="choice">Jump right in, startupfille here I come.</span>
-    </li>
-    <li>
-        <strong class="percent gray">4%</strong>
-        <span class="choice">Email back to discuss, flattered and positive.</span>
-    </li>
-    <li>
-        <strong class="percent purple">6%</strong>
-        <span class="choice">Respond and say "Thanks but no thanks."</span>
-    </li>
-    <li>
-        <strong class="percent blue">9%</strong>
-        <span class="choice">Email back to discuss, all business.</span>
-    </li>
-    <li>
-        <strong class="percent yellow">31%</strong>
-        <span class="choice">Email back to discuss, but skeptically.</span>
-    </li>
-    <li>
-        <strong class="percent orange">46%</strong>
-        <span class="choice">Delete the email.</span>
-    </li>
-</ul>
+<script type="text/javascript">
+
+window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2",
+            animationEnabled: true,
+            title: {
+                text: "Popular Colleges Admissions Rate"
+            },
+            data: [
+            {
+                type: "column",
+                dataPoints: @Html.Raw(ViewBag.DataPoints),
+            }
+            ]
+        });
+        chart.render();
+
+}
+</script>
+    @*<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>*@
